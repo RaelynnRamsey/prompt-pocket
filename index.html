@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prompt Pocket</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f9f7f3;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 500px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      font-size: 1.25rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="prompt">Tap the button to get a prompt</div>
+  <button onclick="newPrompt()">New Prompt</button>
+
+  <script>
+    const prompts = [
+      "Tipsy Love Walk – Laughing while holding hands",
+      "Back Hug Lockdown – Bear hug from behind",
+      "Lean Into Love – Forehead press and soft hands"
+    ];
+
+    function newPrompt() {
+      const randomIndex = Math.floor(Math.random() * prompts.length);
+      document.getElementById("prompt").textContent = prompts[randomIndex];
+    }
+
+    // Show a prompt right away on page load
+    newPrompt();
+  </script>
+</body>
+</html>
